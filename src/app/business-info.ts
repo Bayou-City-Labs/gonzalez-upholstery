@@ -12,9 +12,9 @@ export const BUSINESS = {
     zip: "77065",
   },
   hours: [
-    { days: "Monday – Friday", time: "8:00 AM – 6:00 PM" },
-    { days: "Saturday", time: "8:00 AM – 1:00 PM" },
-    { days: "Sunday", time: "Closed" },
+    { days: "Monday – Friday", dayList: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], time: "8:00 AM – 6:00 PM", opens: "08:00", closes: "18:00" },
+    { days: "Saturday", dayList: ["Saturday"], time: "8:00 AM – 1:00 PM", opens: "08:00", closes: "13:00" },
+    { days: "Sunday", dayList: ["Sunday"], time: "Closed", opens: null, closes: null },
   ],
   services: [
     {
