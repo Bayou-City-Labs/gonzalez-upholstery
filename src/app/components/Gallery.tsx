@@ -1,6 +1,13 @@
 import Image from "next/image";
 
-const PLACEHOLDERS = [1, 2, 3, 4, 5, 6].map((i) => `/gallery/placeholder-${i}.svg`);
+const PHOTOS = [
+  { src: "/gallery/gh-1.jpg", alt: "Center console trim and rear seatbelt mounts, close-up" },
+  { src: "/gallery/gh-2.jpg", alt: "Reupholstered dashboard and leather trim" },
+  { src: "/gallery/gh-3.jpg", alt: "Pickup truck front seat with embroidered headrest" },
+  { src: "/gallery/gh-4.jpg", alt: "Center console trim and rear seatbelt mounts, close-up" },
+  { src: "/gallery/gh-5.jpg", alt: "Vehicle dashboard with aftermarket gauge installed" },
+  { src: "/gallery/gh-6.jpg", alt: "Damaged seat and seatbelt mount trim before repair" },
+];
 
 export function Gallery() {
   return (
@@ -10,9 +17,17 @@ export function Gallery() {
         Our Work
       </h2>
       <div className="ds-grid" data-cols-md data-cols-lg style={{ "--ds-grid-cols": 1, "--ds-grid-cols-md": 2, "--ds-grid-cols-lg": 3 } as React.CSSProperties}>
-        {PLACEHOLDERS.map((src) => (
-          <div key={src} className="ds-card" style={{ overflow: "hidden" }}>
-            <Image src={src} alt="Gonzalez Auto Upholstery project" width={640} height={480} style={{ width: "100%", height: "auto", display: "block" }} />
+        {PHOTOS.map((photo) => (
+          <div key={photo.src} className="ds-card" style={{ overflow: "hidden" }}>
+            <div style={{ position: "relative", width: "100%", aspectRatio: "4 / 3" }}>
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
           </div>
         ))}
       </div>

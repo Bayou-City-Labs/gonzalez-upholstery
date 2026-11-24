@@ -3,12 +3,15 @@ import { ContactForm } from "./components/ContactForm";
 import { Footer } from "./components/Footer";
 import { Gallery } from "./components/Gallery";
 import { Hero } from "./components/Hero";
+import { Nav } from "./components/Nav";
 import { Services } from "./components/Services";
 import { BUSINESS } from "./business-info";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <Nav />
+      <main id="top">
       <Hero />
       <Services />
       <Gallery />
@@ -24,6 +27,7 @@ export default function Home() {
         <ContactForm />
       </section>
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }

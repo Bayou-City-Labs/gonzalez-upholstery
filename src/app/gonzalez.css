@@ -434,6 +434,7 @@ dialog {
 /* Base element styles — the page looks "on brand" with zero classes. */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
   scrollbar-color: var(--ds-color-border-strong) transparent;
 }
 
@@ -3440,5 +3441,16 @@ hr {
     transparent 8px,
     transparent 16px
   );
+}
+
+/* Gonzalez nav: section links collapse on narrow screens, brand + call button stay. */
+.gonzalez-nav__links {
+  display: inline-flex;
+}
+
+@media (max-width: 639.98px) {
+  .gonzalez-nav__links {
+    display: none;
+  }
 }
 }
