@@ -10,10 +10,12 @@ export function Services() {
       <div className="ds-grid ds-grid--auto ds-gap-6" style={{ "--ds-grid-min": "16rem" } as React.CSSProperties}>
         {BUSINESS.services.map((service) => (
           <div key={service.name} className="ds-card ds-card--raised ds-card--spacious">
-            <h3 className="ds-heading ds-heading--md" style={{ marginBottom: "var(--ds-space-2)" }}>
-              {service.name}
-            </h3>
-            <p className="ds-text ds-text--sm ds-text--muted">{service.description}</p>
+            <div className="ds-card__body">
+              <h3 className="ds-heading ds-heading--md" style={{ marginBottom: "var(--ds-space-2)" }}>
+                {service.name}
+              </h3>
+              <p className="ds-text ds-text--sm ds-text--muted">{service.description}</p>
+            </div>
           </div>
         ))}
       </div>
