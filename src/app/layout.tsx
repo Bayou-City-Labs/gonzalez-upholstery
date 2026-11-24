@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import "./gonzalez.css";
 import { BUSINESS } from "./business-info";
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
+        <Analytics />
       </body>
     </html>
   );
